@@ -26,6 +26,8 @@ CMD make install
 CMD luarocks install lua-cjson
 CMD luarocks install lua-protobuf
 CMD luarocks install luafilesystem
+CMD luarocks install luasocket
+
 CMD luarocks install lua-hiredis-with-5.2-fix
 
 CMD yum install mongo-c-driver mongo-c-driver-devel mongo-c-driver-libs -y
