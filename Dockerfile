@@ -35,3 +35,4 @@ CMD yum install mongo-c-driver mongo-c-driver-devel mongo-c-driver-libs -y
 CMD luarocks install lua-mongo
 
 
+ENTRYPOINT ["/usr/bin/luajit"]
