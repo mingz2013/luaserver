@@ -19,7 +19,9 @@ CMD cd /build
 CMD wget https://luarocks.org/releases/luarocks-3.7.0.tar.gz
 CMD tar zxpf luarocks-3.7.0.tar.gz
 CMD cd luarocks-3.7.0
-CMD ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/
+CMD ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/local
+CMD ln -s /usr/local/bin/luarocks /usr/bin/luarocks
+CMD ln -s /usr/local/bin/luarocks-admin /usr/bin/luarocks-admin
 CMD make install
 
 
