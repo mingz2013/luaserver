@@ -6,8 +6,6 @@ CMD yum install epel-release -y
 CMD yum install wget gcc unzip git cmake -y
 
 
-
-
 CMD cd /build
 CMD wget https://luajit.org/download/LuaJIT-2.1.0-beta3.tar.gz
 CMD tar zxpf LuaJIT-2.1.0-beta3.tar.gz
