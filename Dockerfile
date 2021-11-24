@@ -27,6 +27,8 @@ CMD luarocks install lua-cjson
 CMD luarocks install lua-protobuf
 CMD luarocks install luafilesystem
 CMD luarocks install luasocket
+CMD luarocks install lpeg
+CMD luarocks install struct
 
 CMD luarocks install lua-hiredis-with-5.2-fix
 
