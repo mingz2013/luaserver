@@ -1,14 +1,16 @@
 .PHONY: help
 help:
 	@echo '                                                                          '
-	@echo 'Makefile for gitbook doc                                                  '
+	@echo 'Makefile for luaserver                                                    '
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
 	@echo '   make help                           show help                          '
 	@echo '                                                                          '
-	@echo '   make up                             启动服务                            '
-	@echo '   make down                           停止服务                            '
-	@echo '   make logs                           查看日志                            '
+	@echo '   make up                             start server                       '
+	@echo '   make down                           end server                         '
+	@echo '   make logs                           show logs                          '
+	@echo '   make build                          build docker                       '
+	@echo '   make run                            run                                '
 	@echo '                                                                          '
 	@echo '                                                                          '
 
