@@ -1,16 +1,15 @@
 version: '3.7'
 services:
   luac:
-    build: ./
+#    build: ./
+    image: luaserver
     volumes:
-      - ./data:/data
+      - ./app:/app
 #    restart: always
 #    ports:
 #      - 6379:6379
     networks:
       - my_network
-    command:
-      -
 
 
 networks:

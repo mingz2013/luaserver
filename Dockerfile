@@ -1,45 +1,49 @@
 FROM centos
-CMD mkdir /build
+RUN mkdir /build
 WORKDIR /build
-CMD yum install epel-release -y
-
-CMD yum install wget gcc unzip git cmake -y
 
 
-CMD cd /build
-CMD wget https://luajit.org/download/LuaJIT-2.1.0-beta3.tar.gz
-CMD tar zxpf LuaJIT-2.1.0-beta3.tar.gz
-CMD cd LuaJIT-2.1.0-beta3
-CMD make install
+RUN yum install epel-release -y
 
-CMD cd /build
-
-CMD wget https://luarocks.org/releases/luarocks-3.7.0.tar.gz
-CMD tar zxpf luarocks-3.7.0.tar.gz
-CMD cd luarocks-3.7.0
-CMD ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/local
-CMD make install
-CMD ln -s /usr/local/bin/luarocks /usr/bin/luarocks
-CMD ln -s /usr/local/bin/luarocks-admin /usr/bin/luarocks-admin
+RUN yum install wget gcc unzip git cmake -y
 
 
-CMD luarocks install lua-cjson
-CMD luarocks install lua-protobuf
-CMD luarocks install luafilesystem
-CMD luarocks install luasocket
-CMD luarocks install lpeg
-CMD luarocks install struct
-CMD luarocks install threads
+RUN cd /build
+RUN wget https://luajit.org/download/LuaJIT-2.1.0-beta3.tar.gz
+RUN tar zxpf LuaJIT-2.1.0-beta3.tar.gz
+RUN cd LuaJIT-2.1.0-beta3 && make install
+RUN ln -sf luajit-2.1.0-beta3 /usr/local/bin/luajit
+
+RUN cd /build
+
+RUN wget https://luarocks.org/releases/luarocks-3.7.0.tar.gz
+RUN tar zxpf luarocks-3.7.0.tar.gz
+RUN cd luarocks-3.7.0 && ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/local && make install
+#RUN ln -s /usr/local/bin/luarocks /usr/bin/luarocks
+#RUN ln -s /usr/local/bin/luarocks-admin /usr/bin/luarocks-admin
+
+RUN cd /build
+
+RUN luarocks install lua-cjson
+RUN luarocks install lua-protobuf
+RUN luarocks install luafilesystem
+RUN luarocks install luasocket
+RUN luarocks install lpeg
+RUN luarocks install struct
 
 
-CMD luarocks install lua-hiredis-with-5.2-fix
+RUN luarocks install lua-hiredis-with-5.2-fix
 
-CMD yum install mongo-c-driver mongo-c-driver-devel mongo-c-driver-libs -y
+RUN yum install mongo-c-driver mongo-c-driver-devel mongo-c-driver-libs -y
 
-CMD luarocks install lua-mongo
+RUN luarocks install lua-mongo
+
+#RUN luarocks install threads
+
+RUN mkdir /app
+WORKDIR /app
 
 
-ENTRYPOINT ["/usr/bin/luajit"]
-
+CMD ["/bin/bash"]
 
 
