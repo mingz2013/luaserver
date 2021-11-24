@@ -34,4 +34,4 @@ build:
 
 .PHONY:run
 run:
-	docker run -it luaserver
+	docker run -it --rm luaserver
