@@ -18,9 +18,9 @@ CMD wget https://luarocks.org/releases/luarocks-3.7.0.tar.gz
 CMD tar zxpf luarocks-3.7.0.tar.gz
 CMD cd luarocks-3.7.0
 CMD ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/local
+CMD make install
 CMD ln -s /usr/local/bin/luarocks /usr/bin/luarocks
 CMD ln -s /usr/local/bin/luarocks-admin /usr/bin/luarocks-admin
-CMD make install
 
 
 CMD luarocks install lua-cjson
@@ -29,6 +29,8 @@ CMD luarocks install luafilesystem
 CMD luarocks install luasocket
 CMD luarocks install lpeg
 CMD luarocks install struct
+CMD luarocks install threads
+
 
 CMD luarocks install lua-hiredis-with-5.2-fix
 
@@ -38,3 +40,6 @@ CMD luarocks install lua-mongo
 
 
 ENTRYPOINT ["/usr/bin/luajit"]
+
+
+
