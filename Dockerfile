@@ -19,8 +19,6 @@ RUN cd /build
 RUN wget https://luarocks.org/releases/luarocks-3.7.0.tar.gz
 RUN tar zxpf luarocks-3.7.0.tar.gz
 RUN cd luarocks-3.7.0 && ./configure --with-lua-include=/usr/local/include/luajit-2.1/ --prefix=/usr/local && make install
-#RUN ln -s /usr/local/bin/luarocks /usr/bin/luarocks
-#RUN ln -s /usr/local/bin/luarocks-admin /usr/bin/luarocks-admin
 
 RUN cd /build
 
@@ -44,6 +42,5 @@ RUN mkdir /app
 WORKDIR /app
 
 
-#CMD ["/bin/bash"]
 CMD ["/usr/local/bin/luajit"]
 

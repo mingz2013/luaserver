@@ -30,8 +30,9 @@ logs:
 
 .PHONY: build
 build:
-	docker build . -t luaserver
+	docker build . -t mingz2013/luaserver
+	#docker push mingz2013/luaserver
 
 .PHONY:run
 run:
-	docker run -it --rm luaserver
+	docker run -it --rm mingz2013/luaserver
