@@ -8,7 +8,7 @@ luaserver
 
 
 # example
-docker run -it mingz2013/luaserver
+docker run -it --rm mingz2013/luaserver
 
 # lib
 - luajit  https://github.com/LuaJIT/LuaJIT

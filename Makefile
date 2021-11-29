@@ -33,7 +33,7 @@ logs:
 .PHONY: build
 build:
 	docker build . -t mingz2013/luaserver
-	#docker push mingz2013/luaserver
+	docker push mingz2013/luaserver
 
 .PHONY:run
 run:
